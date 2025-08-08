@@ -42,8 +42,10 @@ const ProductCard = (props) => {
         </div>
         <div className="product-card__price">
           <span className="product-card__price-label">Price:</span>
+          <span className="product-card__price-value">
+            {product.price}
+          </span>
           <span className="product-card__price-currency">$</span>
-          {product.price}
         </div>
       </div>
       <div className="product-card__actions">
