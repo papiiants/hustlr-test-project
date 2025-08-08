@@ -19,7 +19,6 @@ const ProductCard = (props) => {
         class="product-card__image"
         src={product.image}
         alt={product.title}
-        width="300"
         height="200"
         loading="lazy"
       />
