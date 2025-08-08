@@ -1,3 +1,4 @@
+import './Products.css'
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../redux/action";
@@ -111,7 +112,7 @@ const Products = () => {
         <div className="products-list">
           {filter.map((product) => {
             return (
-              <div className="product-list__item" key={product.id}>
+              <div className="products-list__item" key={product.id}>
                 <ProductCard product={product} addProduct={addProduct}/>
               </div>
             );
