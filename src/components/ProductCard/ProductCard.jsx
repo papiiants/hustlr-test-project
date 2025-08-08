@@ -24,11 +24,24 @@ const ProductCard = (props) => {
       />
 
       <div className="product-card__body">
-        <h3 className="product-card__title">{product.title.substring(0, 35)}...</h3>
+        <h3 className="product-card__title">
+          {
+            product.title.length > 20
+              ? `${product.title.substring(0, 20)}...`
+              : `${product.title}`
+          }
+        </h3>
         <div className="product-card__description">
-          <p>{product.description.substring(0, 90)}...</p>
+          <p>
+            {
+            product.description.length > 90
+              ? `${product.description.substring(0, 90)}...`
+              : `${product.description}`
+            }
+          </p>
         </div>
         <div className="product-card__price">
+          <span className="product-card__price-label">Price:</span>
           <span className="product-card__price-currency">$</span>
           {product.price}
         </div>
