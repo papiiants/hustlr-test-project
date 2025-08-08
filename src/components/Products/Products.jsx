@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addCart } from "../redux/action";
+import { addCart } from "../../redux/action";
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-import ProductCard from './ProductCard'
+import ProductCard from '../ProductCard'
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -108,11 +108,15 @@ const Products = () => {
           </button>
         </div>
 
-        {filter.map((product) => {
-          return (
-            <ProductCard product={product} addProduct={addProduct}/>
-          );
-        })}
+        <div className="products-list">
+          {filter.map((product) => {
+            return (
+              <div className="product-list__item" key={product.id}>
+                <ProductCard product={product} addProduct={addProduct}/>
+              </div>
+            );
+          })}
+        </div>
       </>
     );
   };

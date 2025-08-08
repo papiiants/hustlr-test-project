@@ -13,7 +13,6 @@ const ProductCard = (props) => {
   return (
     <div
       id={product.id}
-      key={product.id}
       className="product-card"
     >
       <img
@@ -26,7 +25,7 @@ const ProductCard = (props) => {
       />
 
       <div className="product-card__body">
-        <h3 className="product-card__title">{product.title.substring(0, 12)}...</h3>
+        <h3 className="product-card__title">{product.title.substring(0, 35)}...</h3>
         <div className="product-card__description">
           <p>{product.description.substring(0, 90)}...</p>
         </div>
