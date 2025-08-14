@@ -1,0 +1,118 @@
+.product-details {
+  --gap: 60px;
+  --paddingY: 80px;
+  --colorLight: #e3e3e3;
+  --border: 1px solid var(--colorLight);
+
+  @media(width <= 767px) {
+    --paddingY: 40px;
+
+    padding-top: var(--paddingY);
+  }
+
+  position: relative;
+  display: grid;
+  align-items: center;
+  column-gap: var(--gap);
+
+  @media(width > 767px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    width: 100vw;
+    height: 1px;
+    background-color: var(--colorLight);
+  }
+}
+
+.product-details__image {
+  width: 100%;
+  object-fit: contain;
+  transition: scale 0.2s;
+}
+
+.product-details__body {
+  position: relative;
+  display: grid;
+  row-gap: 20px;
+  flex-grow: 1;
+  padding-block: var(--paddingY);
+  font-weight: 300;
+
+  @media(width <= 767px) {
+    row-gap: 10px;
+    flex-grow: 0;
+    max-width: 500px;
+    margin-inline: auto;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(var(--gap) / -2);
+    height: 100%;
+    width: 1px;
+    background-color: var(--colorLight);
+  }
+}
+
+.product-details__category {
+  justify-self: start;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: var(--bs-body-color);
+  border-radius: 5px;
+}
+
+.product-details__title {
+  font-size: 1.8rem;
+}
+
+.product-details__price {
+  display: flex;
+  align-items: end;
+  column-gap: 10px;
+  font-weight: 500;
+}
+
+.product-details__price-value {
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.product-details__actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-details__button {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+  border: var(--border);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #212529;
+    border-color: #212529;
+  }
+}
